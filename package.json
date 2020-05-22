@@ -1,0 +1,13 @@
+{
+  "name": "telex",
+  "version": "1.0.0",
+  "description": "The TypeScript crash course tutorial practises",
+  "main": "index.js",
+  "repository": "https://github.com/genemators/telex.git",
+  "author": "Sokhibjon Orzikulov <genemators@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^14.0.1"
+  }
+}
