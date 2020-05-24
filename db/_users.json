@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "name": "Sokhibjon",
+    "role": "Full-Stack Senior Developer",
+    "jiraAdmin": true,
+    "added": "2020-05-19"
+  },
+  {
+    "id": "2",
+    "name": "Muhammadyususf",
+    "role": "Full-Stack Middle Developer",
+    "jiraAdmin": false,
+    "added": "2020-05-20"
+  }
+]
