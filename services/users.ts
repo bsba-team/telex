@@ -2,7 +2,7 @@ import { fetchData, persistData } from "./db.ts";
 import { User } from "../models/user.ts";
 import createId from "../services/createId.ts";
 
-type UserData = Pick<User, "name" | "role" | "jiraAdmin">;
+type UserData = Pick<User, "name" | "role" | "superuser">;
 
 export const getUsers = async (): Promise<User[]> => {
   const users = await fetchData();
@@ -24,7 +24,7 @@ export const createUser = async (userData: UserData): Promise<string> => {
     id: createId(),
     name: String(userData.name),
     role: String(userData.role),
-    jiraAdmin: "jiraAdmin" in userData ? Boolean(userData.jiraAdmin) : false,
+    superuser: "superuser" in userData ? Boolean(userData.superuser) : false,
     added: new Date()
   };
 
@@ -47,10 +47,10 @@ export const updateUser = async (
     ...user,
     name: userData.name !== undefined ? String(userData.name) : user.name,
     role: userData.role !== undefined ? String(userData.role) : user.role,
-    jiraAdmin:
-      userData.jiraAdmin !== undefined
-        ? Boolean(userData.jiraAdmin)
-        : user.jiraAdmin
+    superuser:
+      userData.superuser !== undefined
+        ? Boolean(userData.superuser)
+        : user.superuser
   };
 
   const users = await fetchData();

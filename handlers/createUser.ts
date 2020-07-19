@@ -15,7 +15,7 @@ export default async ({
   }
 
   const {
-    value: { name, role, jiraAdmin }
+    value: { name, role, superuser }
   } = await request.body();
 
   if (!name || !role) {
@@ -24,7 +24,7 @@ export default async ({
     return;
   }
 
-  const userId = await createUser({ name, role, jiraAdmin });
+  const userId = await createUser({ name, role, superuser });
 
   response.body = { msg: "User created", userId };
 };
